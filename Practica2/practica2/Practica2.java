@@ -3,7 +3,7 @@ import java.util.*;
 public class Practica2
 {
 	public static void main(String[] args) {
-
+	///////////////////////////////////////////////////77
     ArrayList <Integer []> lista = new ArrayList<Integer []>();
 
 Scanner sc = new Scanner(System.in);
