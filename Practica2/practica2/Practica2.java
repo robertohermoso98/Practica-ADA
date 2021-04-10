@@ -6,25 +6,21 @@ public class Practica2
 
     ArrayList <Integer []> lista = new ArrayList<Integer []>();
 
+Scanner sc = new Scanner(System.in);
+		String s=sc.nextLine();
+	int n=Integer.parseInt(s);
+  for(int i=0;i<n;i++) { 
+		
+			String [] split = sc.nextLine().split(" ");
+            Integer a = Integer.parseInt(split[0]);
+            Integer b = Integer.parseInt(split[1]);
+            Integer [] ab= {a,b};
 
-    /* for( int i =0; i<10; i++){
-         }
-    */
-      Integer [] a ={ 2,3};
-      lista.add(0,a);
-      Integer [] ba ={ 12,30};
-      lista.add(1,ba);
-      Integer [] ca ={ 40,50};
-      lista.add(2,ca);
-      Integer [] da ={ 5,1};
-      lista.add(3,da);
-      Integer [] aa ={12,10};
-      lista.add(4,aa);
-      Integer [] ea ={3,4};
-      lista.add(5,ea);
-
-   
-    System.out.println(min(lista,0,lista.size()-1));
+      lista.add(ab);
+  }
+        double result = (double) min(lista,0,lista.size()-1);
+  double resultado = redondearDecimales(result,6);
+    System.out.println(resultado);
 	}
   public static Float min(ArrayList <Integer []> lista,int prin, int fin){
     // primero pruebo a calcular la distancia minima por el lado de las x
@@ -100,4 +96,15 @@ public class Practica2
     float bb= (float) Math.sqrt(xx+yy);
     return Math.abs(bb);
   }
+
+ public static double redondearDecimales(double valorInicial, int numeroDecimales) {
+     double parteEntera, resultado;
+     resultado = valorInicial;
+     parteEntera = Math.floor(resultado);
+     resultado=(resultado-parteEntera)*Math.pow(10, numeroDecimales);
+     resultado=Math.round(resultado);
+     resultado=(resultado/Math.pow(10, numeroDecimales))+parteEntera;
+     return resultado;
+ }
+
 }

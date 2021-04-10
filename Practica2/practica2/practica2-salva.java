@@ -6,24 +6,20 @@ public class Practica2
 
     ArrayList <Integer []> lista = new ArrayList<Integer []>();
 
-
-    /* for( int i =0; i<10; i++){
-         }
-    */
-      Integer [] a ={ 2,3};
-      lista.add(0,a);
-      Integer [] ba ={ 12,30};
-      lista.add(1,ba);
-      Integer [] ca ={ 40,50};
-      lista.add(2,ca);
-      Integer [] da ={ 5,1};
-      lista.add(3,da);
-      Integer [] aa ={12,10};
-      lista.add(4,aa);
-      Integer [] ea ={3,4};
-      lista.add(5,ea);
-
-   
+Scanner sc = new Scanner(System.in);
+		String s=sc.nextLine();
+	int n=Integer.parseInt(s);
+  for(int i=0;i<n;i++) { 
+		
+			String [] split = sc.nextLine().split(" ");
+            Integer a = Integer.parseInt(split[0]);
+            Integer b = Integer.parseInt(split[0]);
+            Integer [] ab= {a,b};
+            System.out.println(ab[0]);
+            System.out.println(ab[1]);
+      lista.add(ab);
+  }
+        
     System.out.println(min(lista,0,lista.size()-1));
 	}
   public static Float min(ArrayList <Integer []> lista,int prin, int fin){
